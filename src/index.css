@@ -34,6 +34,8 @@ ol,
 ul,
 menu {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Make images easier to work with */
@@ -65,34 +67,52 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4.75rem;
+  height: 4.5rem;
   margin-inline: 1.75rem;
 }
-.menu {
-  background: transparent; 
-  border: none;
-  padding: 0;
-}
-img[alt="logo"] {
-  height: 1.25rem;
-}
-.links {
+
+.nav_left, .nav_right {
   display: flex;
   align-items: center;
 }
-.links:first-child {
+.nav_left {
   gap: 1rem;
 }
-.links:last-child {
-  gap: 1.5rem;
+.nav_right {
+  gap: 1.275rem;
 }
 
-img[alt="cart"] {
- width: 1.5rem;
- height: 100%;
+img[alt="nav_menu"] {
+  width: 1rem;
+
 }
-img[alt="avatar"] {
- width: 1.75rem;
+img[alt="nav_logo"] {
+  width: 8.2rem;
+  margin-bottom: 0.125rem;
+}
+img[alt="nav_cart"] {
+ width: 1.35rem;
+}
+img[alt="nav_avatar"] {
+ width: 1.5rem;
+}
+
+
+.flyout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--neutral-white);
+}
+.flyout > ul {
+  margin: 3rem;
+}
+.flyout > ul > li {
+  color: black;
+  font-size: 2rem;
 }
 
 /* Product Page styling */
@@ -131,13 +151,71 @@ img[alt="avatar"] {
   position: absolute;
   right: 25px;
 }
-/* Details Styling */
+
+/* Product Page: Details section styling */
 .block {
   margin: 1.75rem;
 }
 
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+}
+.pricing > .discount {
+  color: var(--primary-orange);
+  font-size: 1rem;
+  background: var(--primary-pale-orange);
+  padding: 0.0125rem 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+
+}
+.pricing > .original {
+  margin-left: auto;
+  color: var(--neutral-grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+
+.btns {
+  width: 100%;
+  border: none;
+  border-radius: 0.55rem;
+  font-weight: 700;
+}
+
+.btn_group {
+  margin: 1rem 0;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--neutral-light-grayish-blue);
+}
+
+.btn_inc, .btn_dec {
+  font-size: 2rem;
+  padding-inline: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--primary-orange);
+}
+.btn_cart {
+  background-color: var(--primary-orange);
+  color: var(--neutral-white);
+  padding: 1rem;
+}
+
+
 /* Font styling */
-h1 {
+h1, .price {
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--neutral-very-dark-blue);
