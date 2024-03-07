@@ -1,17 +1,20 @@
 import Nav from './nav/Nav';
 import ProductPage from './product-page/ProductPage';
+import { useState } from 'react';
+import { CartContext } from './CartContext';
 
 function App() {
+  const [cart, setCart] = useState(0);
 
   return (
-    <>
+    <CartContext.Provider value={{ cart, setCart }}>
       <header>
-        <Nav />
+        <Nav cart={cart} />
       </header>
       <main>
-        <ProductPage />
+        <ProductPage setCart={setCart} />
       </main>
-    </>
+    </CartContext.Provider>
   )
 }
 
