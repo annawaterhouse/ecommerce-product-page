@@ -33,8 +33,8 @@ export default function Details() {
           <li className="h1 flex_pricing">$125.00 <span className="discount">50%</span></li>
           <li className="original">$250.00</li>
         </ul>
-        <section className="flex_btns">
-          <div className="btns btn_group">
+        <section className="buttons">
+          <div className="button btn_group">
             <button className="btn_dec" onClick={handleDec}>
               -
             </button>
@@ -43,7 +43,7 @@ export default function Details() {
               +
             </button>
           </div>
-          <button className="btns btn_cart" onClick={handleCart}>
+          <button className="button btn_cart" onClick={handleCart}>
             Add to cart
           </button>
         </section>

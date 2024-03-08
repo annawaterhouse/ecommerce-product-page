@@ -27,6 +27,7 @@ export default function ImageSlide() {
     }
   };
   return (
+    <>
     <section className="slider">
       <div className="arrows">
         <button className="left" onClick={prevImage}>
@@ -53,6 +54,9 @@ export default function ImageSlide() {
         </button>
       </div>
       <img src={images[currIndex]} alt="sneaker[currIndex]" />
+
     </section>
+    
+    </>
   );
 }
