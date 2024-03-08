@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useContext } from 'react';
-import { CartContext } from '../CartContext'
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 
 export default function Details() {
   const { cart, setCart } = useContext(CartContext);
@@ -15,8 +15,8 @@ export default function Details() {
   //or by the server with useParams() and an API call
   //handle add to cart
   const handleCart = () => {
-      setCart(count + cart);
-      alert(`${count} item(s) added to cart`);
+    setCart(count + cart);
+    alert(`${count} item(s) added to cart`);
   };
 
   return (
@@ -30,22 +30,23 @@ export default function Details() {
           the weather can offer.
         </p>
         <ul className="pricing">
-          <li className="h1">$125.00</li>
-          <li className="discount">50%</li>
+          <li className="h1 flex_pricing">$125.00 <span className="discount">50%</span></li>
           <li className="original">$250.00</li>
         </ul>
-        <section className="btns btn_group">
-          <button className="btn_dec" onClick={handleDec}>
-            -
-          </button>
-          <p className="btn_counter">{count}</p>
-          <button className="btn_inc" onClick={handleInc}>
-            +
+        <section className="flex_btns">
+          <div className="btns btn_group">
+            <button className="btn_dec" onClick={handleDec}>
+              -
+            </button>
+            <p className="btn_counter">{count}</p>
+            <button className="btn_inc" onClick={handleInc}>
+              +
+            </button>
+          </div>
+          <button className="btns btn_cart" onClick={handleCart}>
+            Add to cart
           </button>
         </section>
-        <button className="btns btn_cart" onClick={handleCart}>
-          Add to cart
-        </button>
       </article>
     </section>
   );

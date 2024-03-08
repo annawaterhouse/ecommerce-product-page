@@ -26,6 +26,13 @@ export default function Nav() {
         <section className="nav_left">
           <img src={menu} alt="nav_menu" onClick={handleMenu} />
           <img src={logo} alt="nav_logo" />
+          <ul className="desktop_nav">
+            <li>Collections</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
         </section>
         <section className="nav_right">
           <div className="nav_cart_container">

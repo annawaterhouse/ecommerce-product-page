@@ -3,7 +3,7 @@ import Details from "./Details";
 
 export default function ProductPage() {
   return (
-    <section className="container info">
+    <section className="page_container">
       <ImageSlider />
       <Details />
     </section>
