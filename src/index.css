@@ -229,7 +229,7 @@ img[alt="nav_avatar"] {
   border-radius: 50%;
   border: none;
 }
-
+/*svgs*/
 .left {
   position: absolute;
   left: 25px;
@@ -237,6 +237,10 @@ img[alt="nav_avatar"] {
 .right {
   position: absolute;
   right: 25px;
+}
+/*previews*/
+.slider_preview {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -247,12 +251,27 @@ img[alt="nav_avatar"] {
   .slider {
     grid-column: 1 / span 4;
     max-width: 28rem;
-    /* border-radius: 1rem; */
     aspect-ratio: 1/1;
   }
 
   .slider > img {
     border-radius: 0.75rem;
+  }
+  .slider_preview {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .slider_preview > .active {
+    border: 1.5px solid var(--primary-orange);
+    border-radius: 0.6rem;
+  }
+  .slider_preview > .active > img {
+    opacity:0.25;
+  }
+  .slider_preview > * > img {
+    border-radius: 0.5rem;
   }
 }
 
