@@ -13,7 +13,10 @@ export default function Nav() {
   const { cart, setCart } = useContext(CartContext);
   //state to handle mobile flyout menu
   const [openMenu, setOpenMenu] = useState(false);
-  const handleMenu = () => setOpenMenu(!openMenu);
+  const handleMenu = (e) => {
+    e.stopPropagation();
+    setOpenMenu(!openMenu);
+  }
   //handle cart preview
   const [openCart, setOpenCart] = useState(false);
   const handleCart = () => {
@@ -43,7 +46,8 @@ export default function Nav() {
           <img src={avatar} alt="nav_avatar" />
         </section>
         {openMenu && (
-          <menu className="flyout">
+          <div className="backdrop" onClick={handleMenu}>
+          <menu onClick={(e)=>{e.stopPropagation(e)}} className="flyout">
             <ul className="flyout_links flow-content">
               <li onClick={handleMenu}>
                 <img src={x} alt="nav_menu" />
@@ -55,6 +59,7 @@ export default function Nav() {
               <li>Contact</li>
             </ul>
           </menu>
+          </div>
         )}
       </nav>
     </section>
